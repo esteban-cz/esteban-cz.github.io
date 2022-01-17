@@ -1,0 +1,45 @@
+FROM php:8.0-apache AS it2-php8
+
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y \
+        cron \
+        libpng-dev \
+        zlib1g-dev \
+        libpng-dev \
+        mc \
+        lynx \
+        libjpeg-dev \
+        libfreetype6-dev \
+        iproute2 \
+        libldap2-dev \
+        git \
+        zip \
+        unzip \
+        iputils-ping \
+        net-tools \
+        telnet \
+    && apt-get clean
+
+RUN a2enmod rewrite
+
+RUN docker-php-ext-install mysqli
+
+RUN docker-php-ext-configure gd && docker-php-ext-install gd
+RUN docker-php-ext-enable gd
+
+RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-enable pdo_mysql
+
+RUN pecl install xdebug
+RUN docker-php-ext-enable xdebug
+
+
+RUN rm -rf /etc/apache2/sites-enabled/*
+RUN rm -rf /etc/apache2/sites-available/*
+RUN echo "" > /etc/apache2/ports.conf
+RUN printf '\n\nServerName control.local\n\n' >> /etc/apache2/apache2.conf
+RUN rm -rf /var/www/html
+
+COPY ./php.ini /etc/php/php.ini
+
+CMD ["apache2-foreground"]
