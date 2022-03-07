@@ -1,0 +1,117 @@
+FROM php:8.0-apache AS monitoring
+
+RUN mv "/usr/local/etc/php/php.ini-development" "/usr/local/etc/php/php.ini"
+
+RUN a2enmod rewrite
+
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends \
+		libfreetype6-dev \
+		libxml2-dev \
+		libjpeg62-turbo-dev \
+		libpng-dev \
+		zlib1g-dev \
+		libzip-dev \
+		libz-dev \
+		libpq-dev  \
+		libsqlite3-dev  \
+		libicu-dev \
+		zip \
+		iputils-ping \
+        net-tools \
+        telnet \
+        mc \
+		libmcrypt-dev \
+		libvpx-dev \
+		libjpeg-dev \
+		libpng-dev \
+		bzip2 \
+		wget \
+		libexpat1-dev \
+		libbz2-dev \
+		libgmp3-dev \
+		libldap2-dev \
+		libsnmp-dev \
+		libpcre3-dev \
+		libtidy-dev \
+		libaspell-dev \
+		tar \
+		less \
+		nano \
+		libcurl4-gnutls-dev \
+		unzip \
+		libonig-dev \
+		libldap2-dev \
+		libxslt-dev \
+		libwebp-dev \
+		libc-client-dev \
+		libkrb5-dev \
+		libpspell-dev \
+    && phpModules=" \
+                bcmath \
+                bz2 \
+                calendar \
+                exif \
+                gd \
+                gettext \
+                gmp \
+                imap \
+                intl \
+                ldap \
+                mysqli \
+                opcache \
+                pcntl \
+                pdo_mysql \
+                pspell \
+                shmop \
+                snmp \
+                soap \
+                sockets \
+                sysvmsg \
+                sysvsem \
+                sysvshm \
+                tidy \
+                xsl \
+                zip \
+            " \
+	&& docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp \
+	&& docker-php-ext-configure ldap \
+	&& docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
+	&& docker-php-ext-install -j$(nproc) $phpModules \
+	&& pecl install xdebug \
+	&& docker-php-ext-enable xdebug \
+	&& apt-get clean \
+	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN docker-php-ext-install mysqli
+
+COPY ./docker/php-config/php.ini /etc/php/php.ini
+COPY ./docker/add-host-domain.sh /add-host-domain.sh
+COPY ./docker/run.sh /run.sh
+
+RUN chmod +x /add-host-domain.sh
+RUN chmod +x /run.sh
+# Create the log file to be able to run tail
+RUN touch /var/log/container.log
+
+RUN docker-php-ext-configure gd && docker-php-ext-install gd
+RUN docker-php-ext-enable gd
+
+RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-enable pdo_mysql
+
+RUN pecl install mailparse
+RUN docker-php-ext-enable mailparse
+
+RUN pecl install dio-0.2.1
+RUN docker-php-ext-enable dio
+
+COPY ./docker/php-config/custom.ini "/usr/local/etc/php/conf.d/"
+
+RUN rm -rf /etc/apache2/sites-enabled/*
+RUN rm -rf /etc/apache2/sites-available/*
+RUN echo "" > /etc/apache2/ports.conf
+RUN printf '\n\nServerName control.local\n\n' >> /etc/apache2/apache2.conf
+RUN rm -rf /var/www/html
+
+ENTRYPOINT /run.sh
