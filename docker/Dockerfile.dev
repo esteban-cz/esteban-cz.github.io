@@ -1,26 +1,85 @@
 FROM php:8.0-apache AS it2-php8
 
-RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y \
-        cron \
-        libpng-dev \
-        zlib1g-dev \
-        libpng-dev \
-        mc \
-        lynx \
-        libjpeg-dev \
-        libfreetype6-dev \
-        iproute2 \
-        libldap2-dev \
-        git \
-        zip \
-        unzip \
-        iputils-ping \
+RUN a2enmod rewrite
+
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends \
+		libfreetype6-dev \
+		libxml2-dev \
+		libjpeg62-turbo-dev \
+		libpng-dev \
+		zlib1g-dev \
+		libzip-dev \
+		libz-dev \
+		libpq-dev  \
+		libsqlite3-dev  \
+		libicu-dev \
+		zip \
+		iputils-ping \
         net-tools \
         telnet \
-    && apt-get clean
-
-RUN a2enmod rewrite
+        mc \
+		libmcrypt-dev \
+		libvpx-dev \
+		libjpeg-dev \
+		libpng-dev \
+		bzip2 \
+		wget \
+		libexpat1-dev \
+		libbz2-dev \
+		libgmp3-dev \
+		libldap2-dev \
+		libsnmp-dev \
+		libpcre3-dev \
+		libtidy-dev \
+		libaspell-dev \
+		tar \
+		less \
+		nano \
+		libcurl4-gnutls-dev \
+		unzip \
+		libonig-dev \
+		libldap2-dev \
+		libxslt-dev \
+		libwebp-dev \
+		libc-client-dev \
+		libkrb5-dev \
+		libpspell-dev \
+    && phpModules=" \
+                bcmath \
+                bz2 \
+                calendar \
+                exif \
+                gd \
+                gettext \
+                gmp \
+                imap \
+                intl \
+                ldap \
+                mysqli \
+                opcache \
+                pcntl \
+                pdo_mysql \
+                pspell \
+                shmop \
+                snmp \
+                soap \
+                sockets \
+                sysvmsg \
+                sysvsem \
+                sysvshm \
+                tidy \
+                xsl \
+                zip \
+            " \
+	&& docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp \
+	&& docker-php-ext-configure ldap \
+	&& docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
+	&& docker-php-ext-install -j$(nproc) $phpModules \
+	&& pecl install xdebug \
+	&& docker-php-ext-enable xdebug \
+	&& apt-get clean \
+	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN docker-php-ext-install mysqli
 
@@ -29,10 +88,6 @@ RUN docker-php-ext-enable gd
 
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-enable pdo_mysql
-
-RUN pecl install xdebug
-RUN docker-php-ext-enable xdebug
-
 
 RUN rm -rf /etc/apache2/sites-enabled/*
 RUN rm -rf /etc/apache2/sites-available/*

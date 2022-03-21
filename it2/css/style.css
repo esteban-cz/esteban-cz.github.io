@@ -1,0 +1,55 @@
+body {
+    background-color: pink;
+    font-size: xx-large;
+}
+
+h1 {
+    color: greenyellow;
+
+}
+
+p {
+    color: red;
+}
+
+h2 {
+    color: blue;
+}
+h3 {
+    color: #009900;
+}
+h4 {
+    color: #885500;
+}
+h5 {
+    color: orange;
+}
+h6 {
+    color: aqua;
+}
+a {
+    color: white;
+}
+a:hover {
+    color: red;
+}
+a:visited {
+
+    color: purple;
+}
+
+table {
+
+}
+
+tr {
+
+}
+
+td {
+
+}
+
+.bunka-cena{
+
+}
