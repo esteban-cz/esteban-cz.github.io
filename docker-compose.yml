@@ -1,12 +1,12 @@
 version: '3.7'
 
 services:
-  it2-tomecka:
-    image: it2-tomecka:dev
+  it2-php8:
+    image: it2-php8:dev
     container_name: it2-tomecka
     build:
       context: ./docker
-      target: it2-tomecka
+      target: it2-php8
       dockerfile: ./Dockerfile.dev
     ports:
       - "82:80" # HOST_PORT:CONTAINER_PORT
