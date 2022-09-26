@@ -1,5 +1,10 @@
 # IT2-DOCKER
 
+#### Tohle pouzivat
+```sh
+docker-compose up -d --build
+```
+
 #### Build image
 ```sh
 docker-compose build
