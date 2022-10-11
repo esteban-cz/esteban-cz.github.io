@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Stránka pana Tomečky</title>
-    <link rel="website icon" type="png" href="it2/images/web-icon.png">
+    <link rel="website icon" type="png" href="it2/images/est3ban-logo.png">
 </head>
 <body style="background-color:black; color: magenta;">
 
