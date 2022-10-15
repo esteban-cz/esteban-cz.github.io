@@ -1,55 +1,194 @@
-body {
-    background-color: pink;
-    font-size: xx-large;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Aria , sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23242a;
+}
+.box{
+    position: relative;
+    width: 390px;
+    height: 500px;
+    background: rebeccapurple;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.box::before{
+    content:'';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,magenta,magenta);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+.box::after{
+    content:'';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,magenta,magenta);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.form{
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background-color: black;
+    z-index: 10;
+    padding: 80px 40px;
+
+    display: flex;
+    flex-direction: column;
+}
+.form h2{
+    color: magenta;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-top: -30px;
+}
+.inputBox{
+    position: relative;
+    width: 300px;
+    margin-top: 40px;
+
+}
+.inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #23242a;
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    z-index: 10;
+
+}
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 30px 0px 10px;
+    font-size: 1em;
+    color: purple;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
 }
 
-h1 {
-    color: greenyellow;
-
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span
+{
+    color: magenta;
+    transform: translateX(0px) translateY(-50px);
+    font-size: 0.9em;
 }
-
-p {
-    color: red;
+.inputBox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: magenta;
+    border-radius: 10px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
 }
-
-h2 {
-    color: blue;
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i
+{
+    height: 44px;
 }
-h3 {
-    color: #009900;
-}
-h4 {
-    color: #885500;
-}
-h5 {
-    color: orange;
-}
-h6 {
-    color: aqua;
-}
-a {
-    color: white;
-}
-a:hover {
-    color: red;
-}
-a:visited {
-
+.link{
     color: purple;
 }
-
-table {
-
+.link:hover{
+    color: magenta;
 }
 
-tr {
-
+.link:link{
+    text-decoration: none;
 }
 
-td {
-
+input[type="submit"]{
+    border: none;
+    outline: none;
+    background: magenta;
+    padding: 11px 25px;
+    width: 100px;
+    /*      top   right  botom  left*/
+    margin: 30px  0px    0px    0px;
+    border-radius: 100px;
+    font-weight: 600;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    border: none;
+    outline: none;
+    background: purple;
+    padding: 11px 25px;
+    width: 100px;
+    /*      top   right  botom  left*/
+    margin: 30px  0px    0px    0px;
+    border-radius: 100px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+body {
+    background-color: black;
+    color: magenta;
 }
 
-.bunka-cena{
-
+.light-mode {
+    background-color: white;
+    color: magenta;
+}
+.button{
+    alignment: center;
+    border: none;
+    outline: none;
+    background: magenta;
+    padding: 11px 25px;
+    width: 180px;
+    margin-top: 0px;
+    border-radius: 100px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.button:hover{
+    alignment: center;
+    border: none;
+    outline: none;
+    background: purple;
+    padding: 11px 25px;
+    width: 180px;
+    margin-top: 0px;
+    border-radius: 100px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
 }
