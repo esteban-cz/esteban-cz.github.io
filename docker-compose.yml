@@ -3,7 +3,7 @@ version: '3.7'
 services:
   it2-php8:
     image: it2-php8:dev
-    container_name: it2-tomecka
+    container_name: home-project
     build:
       context: ./docker
       target: it2-php8
