@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Aria , sans-serif;
+    font-family: cursive ;
 }
 body{
     display: flex;
@@ -24,11 +24,13 @@ body{
     --text-color: magenta;
     --box-color: black;
 }
-
+.SignIn{
+    font-size: xx-large;
+}
 .box{
     position: relative;
     width: 390px;
-    height: 500px;
+    height: 530px;
     background: rebeccapurple;
     border-radius: 10px;
     overflow: hidden;
@@ -39,7 +41,7 @@ body{
     top: -50%;
     left: -50%;
     width: 390px;
-    height: 500px;
+    height: 530px;
     background: linear-gradient(0deg,transparent,magenta,magenta);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
@@ -50,7 +52,7 @@ body{
     top: -50%;
     left: -50%;
     width: 390px;
-    height: 500px;
+    height: 530px;
     background: linear-gradient(0deg,transparent,magenta,magenta);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
@@ -173,7 +175,7 @@ input[type="submit"]:hover{
     transition: 0.3s;
 }
 .button{
-    alignment: center;
+    alignment: right;
     border: none;
     outline: none;
     background: magenta;
@@ -185,7 +187,7 @@ input[type="submit"]:hover{
     cursor: pointer;
 }
 .button:hover{
-    alignment: center;
+    alignment: right;
     border: none;
     outline: none;
     background: purple;
@@ -196,24 +198,4 @@ input[type="submit"]:hover{
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
-}
-
-#password {
-    background-image: url("https://img.icons8.com/material-sharp/20/000000/visible.png");
-    background-position: 97% center;
-    background-repeat: no-repeat;
-}
-#password.visible {
-    background-image: url("https://img.icons8.com/material-outlined/20/000000/invisible.png");
-}
-#toggle-password {
-    display: none;
-}
-#toggle-password+label {
-    text-indent: -9999px;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: -32px;
-    cursor: pointer;
 }
