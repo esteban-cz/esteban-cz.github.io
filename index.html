@@ -23,33 +23,38 @@
         var element = document.body;
         element.classList.toggle("light-mode");
     }
+    function Homepage() {
+        window.location.href="homepage.php";
+    }
 </script>
+
 <!-- Container -->
 <div class="container">
     <div class="box">
-        <div class="form form-light">
+        <div class="form">
             <h2 class="SignIn">Sign In</h2>
-            <div class="inputBox">
-                <input type="text" required="required" value="">
-                <span>Username</span>
-                <i></i>
-            </div>
-            <div class="inputBox">
-                <input type="password" required="required" id="pass" value="">
-                <span>Password</span>
-                <i></i>
-            </div>
-            <br>
-            <span style="text-align: right">&nbsp;&nbsp;<input id="myCheckbox1" style="display: none" type="checkbox" onclick="ShowPass()"><label for="myCheckbox1">Show Password</label></span>
-            <br><br><br>
-            <span style="align-self: center">
-                <div>
-                    <a class="link" href="forgot-password.php">Forgot Password?</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="link" href="sign-up.php">Sign Up</a>
+                <div class="inputBox">
+                    <input type="text" value="">
+                    <span>Username</span>
+                    <i></i>
                 </div>
-                <input type="submit" value="Login" class="login">&nbsp;<button class="button" onclick="DarkMode()">Toggle light mode</button>
-            </span>
+                <div class="inputBox">
+                    <input type="password" id="pass" value="">
+                    <span>Password</span>
+                    <i></i>
+                </div>
+                <br>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="showpass" style="display: none" type="checkbox" onclick="ShowPass()"><label class="showpass" for="showpass">Show Password</label></span>
+                <br><br><br>
+                <span style="align-self: center">
+                    <div>
+                        <a class="link" href="forgot-password.php">Forgot Password?</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a class="link" href="sign-up.php">Sign Up</a>
+                    </div>
+
+                    <input type="submit" value="Login" class="login" onclick="Homepage()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="button" onclick="DarkMode()">Toggle light mode</button>
+                </span>
         </div>
     </div>
 </div>

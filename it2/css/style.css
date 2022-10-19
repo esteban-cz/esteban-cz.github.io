@@ -199,3 +199,9 @@ input[type="submit"]:hover{
     cursor: pointer;
     transition: 0.3s;
 }
+.showpass:hover{
+    color: purple;
+}
+.showpass:active{
+    color: aqua;
+}
