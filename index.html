@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,58 +8,30 @@
     <title>My Website</title>
     <link rel="website icon" type="png" href="it2/images/est3ban-logo.png">
     <link rel="stylesheet" href="it2/css/style.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
-<body>
-<script>
-    function ShowPass() {
-        var x = document.getElementById("pass");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
-    }
-    function DarkMode() {
-        var element = document.body;
-        element.classList.toggle("light-mode");
-    }
-    function Homepage() {
-        window.location.href="homepage.php";
-    }
-</script>
 
-<!-- Container -->
+<body>
 <div class="container">
-    <div class="box">
-        <div class="form">
-            <h2 class="SignIn">Sign In</h2>
-                <div class="inputBox">
-                    <input type="text" value="">
-                    <span>Username</span>
-                    <i></i>
-                </div>
-                <div class="inputBox">
-                    <input type="password" id="pass" value="">
-                    <span>Password</span>
-                    <i></i>
-                </div>
-                <br>
-                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="showpass" style="display: none" type="checkbox" onclick="ShowPass()"><label class="showpass" for="showpass">Show Password</label></span>
-                <br><br><br>
-                <span style="align-self: center">
-                    <div>
-                        <a class="link" href="forgot-password.php">Forgot Password?</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a class="link" href="sign-up.php">Sign Up</a>
-                    </div>
-                    <form action="homepage.php">
-                        <input type="submit" value="Login" class="login"></form>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="button" onclick="DarkMode()">Toggle light mode</button>
-                </span>
-        </div>
-    </div>
+    <h1>Sign In <input id="switch" type="button" value="" onclick="LightMode()"> </h1>
+    <form action="homepage.php" method="post">
+        <p>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required="required">
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required="required">
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
+        </p>
+        <button type="submit" id="submit" class="submit">Log In</button>
+    </form>
+    <form action="homepage.php" method="post">
+        <button>Register</button>
+    </form>
 </div>
 
+<script src="it2/js/app.js"></script>
 
 </body>
 </html>

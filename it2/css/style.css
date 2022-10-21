@@ -1,207 +1,85 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: cursive ;
 }
-body{
+:root, .darkmode{
+    --icon-color: black;
+    --bg-color: black;
+    --text-color: white;
+    --box-color: black;
+    --box-shadow: 0 2px 5px darkgrey;
+}
+.lightmode{
+    --icon-color: white;
+    --bg-color: white;
+    --text-color: black;
+    --box-color: white;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
     display: flex;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: var(--body-bg-color);
-    color: var(--text-color);
+    height: 100vh;
 }
-/* Light Mode Theme */
-.light-mode{
-    --body-bg-color: white;
-    --text-color: magenta;
-    --box-color: lightgray;
-}
-/* Dark Mode Theme */
-:root, .dark-mode{
-    --body-bg-color: black;
-    --text-color: magenta;
-    --box-color: black;
-}
-.SignIn{
-    font-size: xx-large;
-}
-.box{
-    position: relative;
-    width: 390px;
-    height: 530px;
-    background: rebeccapurple;
-    border-radius: 10px;
-    overflow: hidden;
-}
-.box::before{
-    content:'';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 390px;
-    height: 530px;
-    background: linear-gradient(0deg,transparent,magenta,magenta);
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
-}
-.box::after{
-    content:'';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 390px;
-    height: 530px;
-    background: linear-gradient(0deg,transparent,magenta,magenta);
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
-    animation-delay: -3s;
-}
-@keyframes animate{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-.form{
-    position: absolute;
-    inset: 2px;
-    border-radius: 8px;
+
+.container {
     background-color: var(--box-color);
-    z-index: 10;
-    padding: 80px 40px;
-    display: flex;
-    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 1rem;
 }
 
-.form h2{
-    color: magenta;
-    font-weight: 500;
+h1 {
+    padding: 5px 0;
+    font-size: 1.3rem;
+    color: var(--text-color);
     text-align: center;
-    letter-spacing: 0.1em;
-    margin-top: -30px;
-}
-.inputBox{
-    position: relative;
-    width: 300px;
-    margin-top: 40px;
 
 }
-.inputBox input{
-    position: relative;
+
+input {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    outline: none;
     width: 100%;
-    padding: 20px 10px 10px;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #23242a;
-    font-size: 1.5em;
-    letter-spacing: 0.05em;
-    z-index: 10;
-
-}
-.inputBox span{
-    position: absolute;
-    left: 0;
-    padding: 30px 0px 10px;
-    font-size: 1em;
-    color: purple;
-    pointer-events: none;
-    letter-spacing: 0.05em;
-    transition: 0.5s;
+    border: solid 1px #ccc;
 }
 
-.inputBox input:valid ~ span,
-.inputBox input:focus ~ span
-{
-    color: magenta;
-    transform: translateX(0px) translateY(-50px);
-    font-size: 0.9em;
+form i {
+    margin-left: -30px;
+    cursor: pointer;
+    color: var(--icon-color);
 }
-.inputBox i{
-    position: absolute;
-    left: 0;
-    bottom: 0;
+
+button {
+    box-sizing: border-box;
     width: 100%;
-    height: 2px;
-    background: magenta;
-    border-radius: 10px;
-    transition: 0.5s;
-    pointer-events: none;
-    z-index: 9;
-}
-.inputBox input:valid ~ i,
-.inputBox input:focus ~ i
-{
-    height: 44px;
-}
-.link{
-    color: purple;
-}
-.link:hover{
-    color: magenta;
+    padding: 3%;
+    background: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top:10px;
 }
 
-.link:link{
-    text-decoration: none;
+button:hover {
+    background: #0069d9;
+    cursor: pointer;
+}
+.submit{
+    margin-top:10px;
 }
 
-input[type="submit"]{
-    border: none;
-    outline: none;
-    background: magenta;
-    padding: 11px 25px;
-    width: 100px;
-    /*      top   right  botom  left*/
-    margin: 30px  0px    0px    0px;
-    border-radius: 100px;
-    font-weight: 600;
-    cursor: pointer;
-}
-input[type="submit"]:hover{
-    border: none;
-    outline: none;
-    background: purple;
-    padding: 11px 25px;
-    width: 100px;
-    /*      top   right  botom  left*/
-    margin: 30px  0px    0px    0px;
-    border-radius: 100px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.button{
-    alignment: right;
-    border: none;
-    outline: none;
-    background: magenta;
-    padding: 11px 25px;
-    width: 180px;
-    margin-top: 0px;
-    border-radius: 100px;
-    font-weight: 600;
-    cursor: pointer;
-}
-.button:hover{
-    alignment: right;
-    border: none;
-    outline: none;
-    background: purple;
-    padding: 11px 25px;
-    width: 180px;
-    margin-top: 0px;
-    border-radius: 100px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.showpass:hover{
-    color: purple;
-}
-.showpass:active{
-    color: aqua;
-}
