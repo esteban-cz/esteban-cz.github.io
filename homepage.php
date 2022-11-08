@@ -8,6 +8,7 @@
     <title>My Website</title>
     <link rel="website icon" type="png" href="images/est3ban-logo.png">
     <link rel="stylesheet" href="css/home.css">
+</head>
 <body>
 <div class="nav">
     <input type="checkbox" id="nav-check">
