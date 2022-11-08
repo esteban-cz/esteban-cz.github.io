@@ -10,11 +10,39 @@
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-<!-- switch -->
-<label class="switch">
-    <input type="checkbox" onclick="LightMode()">
-    <span class="slider round"></span>
-</label>
+<div class="nav">
+    <input type="checkbox" id="nav-check">
+    <div class="nav-header">
+        <div class="nav-title">
+            esteban
+        </div>
+        <!-- switch -->
+        <label class="switch">
+            <input type="checkbox" onclick="LightMode()">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div class="nav-btn">
+        <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </div>
+
+    <div class="nav-links">
+        <a href="#" target="_self">Socials</a>
+        <a href="#" target="_self">About Me</a>
+        <a href="index.html" target="_self">Log Out</a>
+        <!--
+        <a href="#" target="_blank"></a>
+        <a href="#" target="_blank"></a>
+        -->
+    </div>
+</div>
+
+
+
 <script src="js/home.js"></script>
 </body>
 </html>
