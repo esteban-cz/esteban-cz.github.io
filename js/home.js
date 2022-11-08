@@ -1,10 +1,11 @@
-const triggerMenu = document.querySelector(".menu"),
-    header = document.querySelector(".header"),
-    close = document.querySelector(".dark-part");
-
-triggerMenu.addEventListener("click", () => {
-    header.classList.add("active");
-});
-close.addEventListener("click", () => {
-    header.classList.remove("active");
-});
+function LightMode() {
+    var element = document.body;
+    element.classList.toggle("lightmode");
+    if(document.getElementById("switch").value = DM){
+        var LM = "Light Mode";
+        document.getElementById("switch").value = LM;
+    } else{
+        var DM = "Dark Mode";
+        document.getElementById("switch").value = DM;
+    }
+}
