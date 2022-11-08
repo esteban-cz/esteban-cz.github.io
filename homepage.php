@@ -31,7 +31,8 @@
     </div>
 
     <div class="nav-links">
-        <a href="#" target="_self">Socials</a>
+        <a href="/homepage.php" target="_self">Home</a>
+        <a href="/socials.html" target="_self">Socials</a>
         <a href="#" target="_self">About Me</a>
         <a href="index.html" target="_self">Log Out</a>
         <!--
@@ -40,7 +41,6 @@
         -->
     </div>
 </div>
-
 
 
 <script src="js/home.js"></script>

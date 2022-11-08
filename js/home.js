@@ -9,3 +9,5 @@ function LightMode() {
         document.getElementById("switch").value = DM;
     }
 }
+
+

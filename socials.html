@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="website icon" type="png" href="images/est3ban-logo.png">
+  <link rel="stylesheet" href="css/socials.css">
+</head>
+<body>
+
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title" onclick="solidToggle(event)">
+      esteban
+    </div>
+    <!-- switch -->
+    <label class="switch">
+      <input type="checkbox" onclick="LightMode()">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="nav-links">
+    <a href="/homepage.php" target="_self">Home</a>
+    <a href="#" target="_self">Socials</a>
+    <a href="#" target="_self">About Me</a>
+    <a href="index.html" target="_self">Log Out</a>
+    <!--
+    <a href="#" target="_blank"></a>
+    <a href="#" target="_blank"></a>
+    -->
+  </div>
+</div>
+<br><br>
+<div class="social rounded no-bg" onclick="twitter()" >
+  <a class="twitter">
+    <svg viewBox="0 0 800 800">
+      <path d="M679 239s-21 34-55 57c7 156-107 329-314 329-103 0-169-50-169-50s81 17 163-45c-83-5-103-77-103-77s23 6 50-2c-93-23-89-110-89-110s23 14 50 14c-84-65-34-148-34-148s76 107 228 116c-22-121 117-177 188-101 37-6 71-27 71-27s-12 41-49 61c30-2 63-17 63-17z"/>
+    </svg>
+  </a><br><br>
+  <a class="round github">
+    <svg viewBox="0 0 800 800">
+      <path d="M400 139c144 0 260 116 260 260 0 115-75 213-178 247-9 3-17-2-17-13v-71c0-35-18-48-18-48 57-6 119-28 119-128 0-44-27-70-27-70s14-29-2-69c0 0-22-7-72 27-42-12-88-12-130 0-50-34-72-27-72-27-16 40-2 69-2 69s-27 26-27 70c0 100 62 122 119 128 0 0-14 10-17 35-15 7-53 18-76-22 0 0-13-25-39-27 0 0-26 0-2 16 0 0 17 8 29 38 0 0 16 51 88 35v44c0 11-9 16-18 13-103-34-178-132-178-247 0-144 116-260 260-260z"/>
+    </svg>
+  </a><br><br>
+  <a class="rounded instagram">
+    <svg viewBox="0 0 800 800" onclick="">
+      <path d="M150 400c0-119 0-166 42-208s88-42 208-42 166 0 208 42 42 89 42 208 0 166-42 208-88 42-208 42-166 0-208-42-42-89-42-208zm455 0c0-114 0-148-29-176-29-29-62-29-176-29s-148 0-176 29c-29 29-29 62-29 176s0 148 29 176c29 29 62 29 176 29s148 0 176-29c29-29 29-62 29-176zM400 272a128 128 0 1 1 0 256 128 128 0 0 1 0-256zm0 211c46 0 83-37 83-83s-37-83-83-83-83 37-83 83 37 83 83 83zm163-216c0 16-13 30-30 30-16 0-30-14-30-30 0-17 14-30 30-30 17 0 30 13 30 30z"/>
+    </svg>
+  </a><br><br>
+  <a class="rounded reddit">
+    <svg viewBox="0 0 800 800">
+      <path d="M460 668c36-19 84 7 74 43h-268c-10-36 38-62 74-43h120z" />
+      <ellipse cx="472" cy="536" rx="72" ry="86" />
+      <ellipse cx="328" cy="536" rx="72" ry="86" />
+      <path d="M425 711c55-30 89-158 67-268h-184c-22 110 12 238 67 268h50z" />
+      <circle cx="578" cy="269" r="44" />
+      <circle cx="222" cy="269" r="44" />
+      <ellipse cx="400" cy="329" rx="197" ry="129" />
+      <circle class="reddit-eyes" cx="331" cy="304" r="32" />
+      <circle class="reddit-eyes" cx="469" cy="304" r="32" />
+      <path class="reddit-line" d="M521 116l-88-20-32 102M468 388s-16 21-68 21-68-21-68-21" />
+      <circle cx="556" cy="123" r="34" />
+    </svg>
+  </a><br><br>
+  <a class="rounded youtube">
+    <svg viewBox="0 0 800 800">
+      <path d="M400 224c144 0 201 2 224 25 17 17 26 52.125 26 151s-9 134-26 151c-23 23-80 25-224 25s-201-2-224-25c-17-17-26-52.125-26-151s9-134 26-151c23-23 80-25 224-25zm-52 100v141l135-70z" />
+    </svg>
+  </a><br><br>
+  <a class="rounded spotify">
+    <svg viewBox="0 0 800 800">
+      <path d="M400 140c144 0 260 117 260 260S543 660 400 660 140 543 140 400s117-260 260-260zm113 354c-68-43-153-51-252-29-20 4-16 37 9 31 91-20 166-12 228 25 18 11 34-15 15-27zm32-76c-81-50-197-64-292-35-23 7-16 46 15 37 82-24 184-13 256 31 21 13 43-19 21-33zm7-48c34 19 52-23 26-39-96-57-254-63-340-35-30 10-17 55 15 45 75-23 215-19 299 29z"/>
+    </svg>
+  </a><br><br>
+  <a class="email generic">
+    <svg viewBox="0 0 800 800">
+      <path d="M627 180c29 0 53 24 53 53v334c0 29-24 53-53 53H173c-29 0-53-24-53-53V233c0-29 24-53 53-53h454zm-7 113v-53L400 387 180 240v53l220 147z"/>
+    </svg>
+  </a><br><br>
+  <a class="phone generic">
+    <svg viewBox="0 0 800 800">
+      <path d="M627 513c22 23 38 50 1 95-35 42-61 42-92 42-76 0-188-96-243-152-53-55-143-170-143-251 0-30 13-59 47-81 35-23 68-22 95 11 22 27 81 92 44 142-25 33-22 32 2 59 25 28 51 55 89 89 21 16 17 19 55-7 44-30 123 33 145 53z"/>
+    </svg>
+  </a><br><br>
+</div>
+
+<script src="js/socials.js"></script>
+</body>
+</html>

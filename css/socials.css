@@ -177,5 +177,136 @@ input:checked + .slider:before {
         overflow-y: auto;
     }
 }
+.social a {
+    margin: 0.6rem;
+    transition: 0.5s ease;
+    height: 15vw;
+    width: 15vw;
+    max-width: 6rem;
+    max-height: 6rem;
+    display: inline-block;
+}
+.social a:hover {
+    cursor: pointer;
+}
+.social a svg {
+    height: 100%;
+    width: 100%;
+    fill: white;
+}
+.social .badges a {
+    border-radius: 1rem;
+}
 
+.round {
+    border-radius: 50%;
+}
 
+.rounded {
+    border-radius: 20%;
+}
+
+.github {
+    background: #383940;
+}
+.github:focus, .github:hover {
+    background: #202125;
+}
+
+.instagram {
+    background: #383940;
+}
+.instagram:focus, .instagram:hover {
+    background: #202125;
+}
+
+.reddit {
+    background: #cee3f8;
+}
+.reddit:focus, .reddit:hover {
+    background: #a1caf2;
+}
+.reddit svg {
+    stroke-width: 18;
+    stroke: #383940;
+}
+.reddit svg.alt {
+    stroke-width: 21;
+}
+.reddit svg:focus svg, .reddit svg:hover svg {
+    stroke: #202125;
+}
+.reddit svg .reddit-eyes {
+    fill: #f04a22;
+    stroke-width: 0;
+}
+.reddit svg .reddit-line {
+    stroke-linecap: round;
+    fill: none;
+    stroke-linejoin: round;
+}
+
+.spotify {
+    background: #2ebd59;
+}
+.spotify:focus, .spotify:hover {
+    background: #249446;
+}
+
+.twitter {
+    background: #55acee;
+}
+.twitter:focus, .twitter:hover {
+    background: #1271ba;
+}
+
+.youtube {
+    background: #cd201f;
+}
+.youtube:focus, .youtube:hover {
+    background: #a11918;
+}
+
+.no-bg a {
+    background-color: transparent !important;
+    margin: 0;
+}
+.no-bg .generic svg {
+    fill: #383940;
+}
+.no-bg .generic:focus svg, .no-bg .generic:hover svg {
+    fill: #202125;
+}
+.no-bg .github svg {
+    fill: #383940;
+}
+.no-bg .github:focus svg, .no-bg .github:hover svg {
+    fill: #202125;
+}
+.no-bg .instagram svg {
+    fill: #383940;
+}
+.no-bg .instagram:focus svg, .no-bg .instagram:hover svg {
+    fill: #202125;
+}
+.no-bg .reddit svg {
+    fill: white !important;
+}
+.no-bg .spotify svg {
+    fill: #2ebd59;
+}
+.no-bg .spotify:focus svg, .no-bg .spotify:hover svg {
+    fill: #249446;
+}
+.no-bg .twitter svg {
+    fill: #55acee;
+}
+.no-bg .twitter:focus svg, .no-bg .twitter:hover svg {
+    fill: #2795e9;
+}
+.no-bg .youtube svg {
+    fill: #cd201f;
+}
+.no-bg .youtube:focus svg, .no-bg .youtube:hover svg {
+    fill: #a11918;
+}
