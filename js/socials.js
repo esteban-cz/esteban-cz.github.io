@@ -20,14 +20,17 @@ function twitter() {
     window.open('https://twitter.com/Est3banE', '_blank');
 }
 function ig() {
-    window.open('https://twitter.com/Est3banE', '_blank');
+    window.open('https://instagram.com/stepaaaneek', '_blank');
 }
 function ytb() {
-    window.open('https://twitter.com/Est3banE', '_blank');
+    window.open('https://youtube.com/esteban', '_blank');
 }
 function reddit() {
-    window.open('https://twitter.com/Est3banE', '_blank');
+    window.open('https://reddit.com', '_blank');
 }
 function github() {
     window.open('https://twitter.com/Est3banE', '_blank');
+}
+function spotify() {
+    window.open('#')
 }
