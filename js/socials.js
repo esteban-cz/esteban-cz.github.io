@@ -23,7 +23,7 @@ function ig() {
     window.open('https://instagram.com/stepaaaneek', '_blank');
 }
 function ytb() {
-    window.open('https://youtube.com/esteban', '_blank');
+    window.open('https://www.youtube.com/channel/UCWMpq75nP2FGtBRgX8ambYQ', '_blank');
 }
 function reddit() {
     window.open('https://reddit.com', '_blank');
