@@ -17,10 +17,10 @@ function LightMode() {
 }
 
 function twitter() {
-    window.open('https://twitter.com/Est3banE', '_blank');
+    window.open('https://www.twitter.com/Est3banE', '_blank');
 }
 function ig() {
-    window.open('https://instagram.com/stepaaaneek', '_blank');
+    window.open('https://www.instagram.com/stepaaaneek/', '_blank');
 }
 function ytb() {
     window.open('https://www.youtube.com/channel/UCWMpq75nP2FGtBRgX8ambYQ', '_blank');

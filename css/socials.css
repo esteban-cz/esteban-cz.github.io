@@ -215,16 +215,16 @@ input:checked + .slider:before {
 
 .instagram {
     background: #383940;
+
 }
 .instagram:focus, .instagram:hover {
     background: #202125;
 }
-
 .reddit {
     background: #cee3f8;
 }
 .reddit:focus, .reddit:hover {
-    background: #a1caf2;
+    background: #8fbfef;
 }
 .reddit svg {
     stroke-width: 18;
@@ -264,7 +264,7 @@ input:checked + .slider:before {
     background: #cd201f;
 }
 .youtube:focus, .youtube:hover {
-    background: #a11918;
+    background: #851414;
 }
 
 .no-bg a {
