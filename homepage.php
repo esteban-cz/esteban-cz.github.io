@@ -31,10 +31,10 @@
     </div>
 
     <div class="nav-links">
-        <a href="/homepage.html" target="_self">Home</a>
-        <a href="/socials.html" target="_self">Socials</a>
-        <a href="#" target="_self">About Me</a>
-        <a href="/index.html" target="_self">Log Out</a>
+        <a href="homepage.php" target="_self">Home</a>
+        <a href="socials.html" target="_self">Socials</a>
+        <a href="aboutme.html" target="_self">About Me</a>
+        <a href="index.html" target="_self">Log Out</a>
         <!--
         <a href="#" target="_blank"></a>
         <a href="#" target="_blank"></a>
