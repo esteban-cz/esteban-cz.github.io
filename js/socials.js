@@ -26,11 +26,11 @@ function ytb() {
     window.open('https://www.youtube.com/channel/UCWMpq75nP2FGtBRgX8ambYQ', '_blank');
 }
 function reddit() {
-    window.open('https://reddit.com', '_blank');
+    window.open('https://www.reddit.com/user/esteban_cz', '_blank');
 }
 function github() {
-    window.open('https://twitter.com/Est3banE', '_blank');
+    window.open('https://github.com/esteban-cz', '_blank');
 }
 function spotify() {
-    window.open('#')
+    window.open('https://open.spotify.com/user/21lq26ay2dtwol3uaoadgqe3a?si=e78cb2bd38f442d3', '_blank');
 }
