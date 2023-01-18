@@ -23,7 +23,7 @@
 
 <?php
 
-// Check if the form has been submitted
+// Check if the form has been submitte
 if (isset($_POST['submit'])) {
     // Get the user's input from the form
     $url = $_POST['url'];
