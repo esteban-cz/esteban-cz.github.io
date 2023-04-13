@@ -19,6 +19,12 @@ input[type='text'] {
     border: none;
 }
 
+.normal-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
 .checkbox-label {
     display: inline-flex;
     margin-bottom: 5px;
