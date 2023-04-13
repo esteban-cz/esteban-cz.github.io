@@ -1,51 +1,49 @@
 body {
-    background-color: #333;
+    background-color: #333333;
 }
 
 .container {
-    width: 80%;
+    max-width: 800px;
     margin: 0 auto;
     background-color: #f2f2f2;
-    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
 }
 
-input[type='text'] {
-    width: 50%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: none;
+input[type="text"], select {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin: 8px 0;
+    width: 100%;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 18px;
-}
-
-select {
-    width: 50%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: none;
+    display: inline-block;
+    margin-bottom: 6px;
 }
 
 button {
-    background-color: #9c27b0;
-    color: #000;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 4px;
+    padding: 12px 20px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #7b1fa2;
+    background-color: #3e8e41;
 }
 
-#copyinput {
-    display: none;
+button:active {
+    background-color: #3e8e41;
+    transform: translateY(2px);
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
 }
