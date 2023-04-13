@@ -1,5 +1,4 @@
-var copy = () =>
-{
+var copy = () => {
     let name = document.getElementById("name").value;
     let item = document.getElementById("item").value;
     let starred = document.getElementById("starred").checked ? "★" : "";
@@ -7,15 +6,18 @@ var copy = () =>
     let stattrak = document.getElementById("stattrak").checked ? " StatTrak™" : "";
     let rarity = String.fromCharCode(eval(document.getElementById("rarity").value));
 
-    let input = document.getElementById("copyinput");
+    let input = document.getElementById("copyinput"); // modified line
+
     input.value = `playerradio Radio.WePlanted "\u2028\x03\x03${name} \x01has opened a container and found: ${rarity}${starred}${stattrak} ${item} | ${paintkit}"`;
+
+    input.style.display = "block"; // added line
     input.select();
-    input.setSelectionRange(0, input.value.length)
     document.execCommand("copy");
 
-    let button = document.getElementById("copybutton");
-    button.innerText = "Copied";
+    let copybutton = document.getElementById("copybutton");
+    copybutton.innerHTML = "Copied";
     setTimeout(() => {
-        button.innerText = "Copy command";
+        copybutton.innerHTML = "Copy command";
+        input.style.display = "none";
     }, 3000);
 };
