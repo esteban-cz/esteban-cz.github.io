@@ -19,7 +19,7 @@ input[type='text'] {
     border: none;
 }
 
-label {
+.checkbox-label {
     display: inline-flex;
     margin-bottom: 5px;
     font-size: 18px;
