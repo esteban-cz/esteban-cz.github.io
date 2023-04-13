@@ -10,7 +10,7 @@ var copy = () => {
 
     input.value = `playerradio Radio.WePlanted "\u2028\x03\x03${name} \x01has opened a container and found: ${rarity}${starred}${stattrak} ${item} | ${paintkit}"`;
 
-    input.style.display = "block"; // added line
+    input.style.display = "none"; // added line
     input.select();
     document.execCommand("copy");
 
