@@ -17,7 +17,7 @@ var copy_drop = () => {
     let copybutton = document.getElementById("copybutton");
     copybutton.innerHTML = "Copied";
     setTimeout(() => {
-        copybutton.innerHTML = "Copy command";
+        copybutton.innerHTML = "Copy unbox message";
         input.style.display = "none";
     }, 3000);
 };
@@ -35,7 +35,7 @@ var copy_ban = () => {
     let copybutton = document.getElementById("banbutton");
     copybutton.innerHTML = "Copied";
     setTimeout(() => {
-        copybutton.innerHTML = "Copy command";
+        copybutton.innerHTML = "Copy ban message";
         input.style.display = "none";
     }, 3000);
 };
