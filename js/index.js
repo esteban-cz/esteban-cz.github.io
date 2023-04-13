@@ -7,7 +7,7 @@ var copy = () =>
     let stattrak = document.getElementById("stattrak").checked ? " StatTrak™" : "";
     let rarity = String.fromCharCode(eval(document.getElementById("rarity").value));
 
-    let input = document.getElementById("dummyinput");
+    let input = document.getElementById("copybutton");
     input.value = `playerradio Radio.WePlanted "\u2028\x03\x03${name} \x01has opened a container and found: ${rarity}${starred}${stattrak} ${item} | ${paintkit}"`;
     input.select();
     input.setSelectionRange(0, input.value.length)
