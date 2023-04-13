@@ -54,5 +54,7 @@ button:hover {
 
 #copyinput {
     display: none;
+    position:absolute;
+    left:-100%;
 }
 
