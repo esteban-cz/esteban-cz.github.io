@@ -20,7 +20,7 @@ input[type='text'] {
 }
 
 label {
-    display: block;
+    display: inline-flex;
     margin-bottom: 5px;
     font-size: 18px;
 }
