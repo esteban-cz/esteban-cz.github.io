@@ -1,11 +1,17 @@
+<?php
+  $css = "../css/style.css";
+  $js = "../js/script.js";
+  $icon = "../../assets/favicon.ico";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Airpods Reps</title>
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+  <link rel="icon" href="<?php echo $icon ?>" type="image/x-icon" sizes="16x16 32x32">
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <!-- partial:index.partial.html -->
@@ -99,6 +105,6 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js'></script>
   <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/409445/animateAnything.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js'></script><script  src="js/script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js'></script><script  src="../js/script.js"></script>
 </body>
 </html>
