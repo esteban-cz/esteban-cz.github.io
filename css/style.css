@@ -242,7 +242,6 @@ a.green {
   background-position: center center;
   background-size: cover;
   object-fit: cover;
-  /* transform: rotate(180deg); */
 }
 
 section {
