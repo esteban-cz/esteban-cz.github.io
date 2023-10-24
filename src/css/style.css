@@ -11,6 +11,13 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   height: 100%;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version */
+
 }
 
 ::selection {
