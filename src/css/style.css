@@ -20,6 +20,27 @@ body {
 
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black; /* Start with a black background */
+  animation: fadeIn 1s ease-in-out forwards;
+  z-index: 1000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+
 ::selection {
   background: #efefef;
   color: #212121;
@@ -73,7 +94,7 @@ a.pearl {
 
 .green,
 a.green {
-  color: #00bcd4;
+  color: hsl(253deg, 90%, 55%);
 }
 
 .pink {
@@ -92,7 +113,7 @@ a.green {
 }
 
 .bg-green {
-  background-color: #00bcd4;
+  background-color: hsl(253deg, 90%, 55%);;
 }
 
 .bg-topographic {
@@ -110,7 +131,7 @@ a.green {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #00bcd4;
+  background-color: hsl(253deg, 90%, 55%);;
   transition: transform 350ms ease;
   transform: translate(-50%, -50%) scale(0.3);
   z-index: 1000;
@@ -194,16 +215,16 @@ a.green {
   font-weight: 700;
 }
 #takeover-nav .contact-items a:hover {
-  color: #00bcd4;
+  color: hsl(253deg, 90%, 55%);
 }
 #takeover-nav .social {
   font-size: 0.75em;
 }
 #takeover-nav .social a {
-  color: #00bcd4;
+  color: hsl(253deg, 90%, 55%);
 }
 #takeover-nav .social a:hover {
-  color: #efefef;
+  color: hsl(268, 90%, 55%);
 }
 
 .gradient-overlay {

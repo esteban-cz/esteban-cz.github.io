@@ -317,70 +317,79 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   var initCursor = false;
 
-  for (var i = 0; i < links.length; i++) {
-    var selfLink = links[i];
+  var mediaQuery = window.matchMedia("(min-width: 768px)"); // Adjust the width as needed
 
-    selfLink.addEventListener("mouseover", function () {
-      cursor.classList.add("custom-cursor--link");
-    });
-    selfLink.addEventListener("mouseout", function () {
-      cursor.classList.remove("custom-cursor--link");
-    });
-  }
+  function handleScreenSizeChange(e) {
+    if (e.matches) {
 
-  window.onmousemove = function (e) {
-    var mouseX = e.clientX;
-    var mouseY = e.clientY;
+      for (var i = 0; i < links.length; i++) {
+        var selfLink = links[i];
 
-    if (!initCursor) {
-      // cursor.style.opacity = 1;
-      TweenLite.to(cursor, 0.5, {
-        opacity: 1
-      });
-      initCursor = true;
-    }
+        selfLink.addEventListener("mouseover", function () {
+          cursor.classList.add("custom-cursor--link");
+        });
+        selfLink.addEventListener("mouseout", function () {
+          cursor.classList.remove("custom-cursor--link");
+        });
+      }
 
-    TweenLite.to(cursor, 0, {
-      top: mouseY + "px",
-      left: mouseX + "px"
-    });
+      window.onmousemove = function (e) {
+        var mouseX = e.clientX;
+        var mouseY = e.clientY;
+
+        if (!initCursor) {
+          // cursor.style.opacity = 1;
+          TweenLite.to(cursor, 0.5, {
+            opacity: 1
+          });
+          initCursor = true;
+        }
+
+        TweenLite.to(cursor, 0, {
+          top: mouseY + "px",
+          left: mouseX + "px"
+        });
+      };
+
+      window.ontouchmove = function (e) {
+        var mouseX = e.touches[0].clientX;
+        var mouseY = e.touches[0].clientY;
+        if (!initCursor) {
+          // cursor.style.opacity = 1;
+          TweenLite.to(cursor, 0.3, {
+            opacity: 1
+          });
+          initCursor = true;
+        }
+
+        TweenLite.to(cursor, 0, {
+          top: mouseY + "px",
+          left: mouseX + "px"
+        });
+      };
+
+      window.onmouseout = function (e) {
+        TweenLite.to(cursor, 0.3, {
+          opacity: 0
+        });
+        initCursor = false;
+      };
+
+      window.ontouchstart = function (e) {
+        TweenLite.to(cursor, 0.3, {
+          opacity: 1
+        });
+      };
+
+      window.ontouchend = function (e) {
+        setTimeout(function () {
+          TweenLite.to(cursor, 0.3, {
+            opacity: 0
+          });
+        }, 200);
+      };
+    };
   };
-
-  window.ontouchmove = function (e) {
-    var mouseX = e.touches[0].clientX;
-    var mouseY = e.touches[0].clientY;
-    if (!initCursor) {
-      // cursor.style.opacity = 1;
-      TweenLite.to(cursor, 0.3, {
-        opacity: 1
-      });
-      initCursor = true;
-    }
-
-    TweenLite.to(cursor, 0, {
-      top: mouseY + "px",
-      left: mouseX + "px"
-    });
-  };
-
-  window.onmouseout = function (e) {
-    TweenLite.to(cursor, 0.3, {
-      opacity: 0
-    });
-    initCursor = false;
-  };
-
-  window.ontouchstart = function (e) {
-    TweenLite.to(cursor, 0.3, {
-      opacity: 1
-    });
-  };
-
-  window.ontouchend = function (e) {
-    setTimeout(function () {
-      TweenLite.to(cursor, 0.3, {
-        opacity: 0
-      });
-    }, 200);
-  };
+  handleScreenSizeChange(mediaQuery);
+  mediaQuery.addListener(handleScreenSizeChange);
 });
